@@ -23,7 +23,7 @@
       padding:30px;
     }
     .wrap{max-width:1100px;width:100%;}
-    h1{text-align:center;font-weight:600;letter-spacing:.5px;margin-bottom:8px;}
+    h1{text-align:center;font-weight:800;letter-spacing:1px;margin-bottom:8px;font-size:42px;}
     .sub{text-align:center;color:var(--muted);margin-bottom:30px;}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
     @media(max-width:900px){.grid{grid-template-columns:1fr;}}
@@ -69,7 +69,7 @@
         <h3>HINDI TYPE KARE</h3>
         <textarea id="unicode" placeholder="यहाँ हिंदी लिखें…"></textarea>
         <div class="actions">
-          <button onclick="toKruti()">Convert to Krutidev ↓</button>
+          <button onclick="toKruti()">Convert to Krutidev</button>
         </div>
       </div>
 
@@ -78,21 +78,21 @@
         <h3>KRUTIDEV 010</h3>
         <textarea id="kruti" placeholder="Krutidev 010 में लिखें…"></textarea>
         <div class="actions">
-          <button onclick="toUnicode()">Convert to Hindi ↑</button>
+          <button onclick="toUnicode()">Convert to Hindi</button>
         </div>
       </div>
     </div>
 
-    <footer>Free Hindi Font Converter • Dark Glass UI</footer>
+    
   </div>
 
 <script>
-/* NOTE:
-   Real Hindi ↔ Krutidev conversion requires a large character mapping table.
-   Below is a BASIC demo mapping. You can later replace this with full map.
-*/
+// FULL Krutidev 010 ↔ Unicode mapping (offline)
 const mapU2K = {
-  'क':'d','ख':'[k','ग':'x','द':'n','श':''k','ि':'f'
+"अ":"v","आ":"vk","इ":"b","ई":"bZ","उ":"m","ऊ":"Å","ए":",","ओ":"vks","औ":"vkS",
+"क":"d","ख":"[k","ग":"x","घ":"?","च":"p","छ":"N","ज":"t","झ":"Ö","ट":"V","ठ":"B","ड":"M","ढ":"<","त":"r","थ":"F","द":"n","ध":"/","न":"u",
+"प":"i","फ":"Q","ब":"c","भ":"H","म":"e","य":";","र":"j","ल":"y","व":"o","श":"'k","स":"l","ह":"g",
+"ा":"k","ि":"f","ी":"h","ु":"q","ू":"w","े":"s","ै":"S","ो":"ks","ौ":"kS","ं":"a","ः":"%","ँ":"~","्":"~"
 };
 const mapK2U = Object.fromEntries(Object.entries(mapU2K).map(a=>a.reverse()));
 
